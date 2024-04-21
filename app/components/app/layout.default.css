@@ -1,0 +1,42 @@
+body {
+	display: grid;
+	row-gap: var(--w--avatar--before-after);
+    grid-template-areas:
+    	'avatar header'
+    	'avatar main  '
+        'aside  main  '
+        'footer footer';
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    background: var(--clr--white);
+}
+body > img {
+	box-sizing: border-box;
+	width: var(--w--avatar);
+	aspect-ratio: 1;
+	grid-area: avatar;
+	margin: var(--w--avatar--before-after) var(--w--avatar--before-after) 0 var(--w--avatar--before-after);
+	z-index: 2;
+	border: solid var(--b--avatar) var(--clr--green);
+	border-radius: var(--br--avatar);
+}
+body > div {
+	grid-area: 1/1;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	z-index: 1;
+	background: var(--clr--green);
+	height: calc(100% + var(--br--avatar));
+	max-height: calc(var(--w--avatar) + 2 * var(--b--avatar) + var(--w--avatar--before-after) - var(--br--avatar));
+}
+body > div::before,
+body > div::after {
+	content: "";
+	display: block;
+	background: var(--clr--white);
+	width: var(--w--avatar--before-after);
+	height: var(--br--avatar);
+}
+body > div::before { border-top-right-radius: var(--w--avatar--before-after); }
+body > div::after { border-top-left-radius: var(--w--avatar--before-after); }

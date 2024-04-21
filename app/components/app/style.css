@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--clr--white: #fcfcfc;
+	--clr--black: #0f0f0f;
+	--clr--green: #2c3e38;
+	--clr--dark-green: #081c1b;
+	--clr--biege: #e6e0d1;
+	--clr--orange: #c8972c;
+
+	--w--avatar: 240px;
+	--w--avatar--before-after: 20px;
+	--h--footer: 60px;
+	--b--avatar: 15px;
+	--br--avatar: 30px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Rajdhani;
+}
+html, body { min-height: 100vh; }
