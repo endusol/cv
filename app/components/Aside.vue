@@ -4,7 +4,7 @@ import Section from './Section.vue'
 
 <template>
 <aside class="c c--aside">
-	<Section header="SKILLS">aside</Section>
+	<Section header="SKILLS">skills</Section>
 	<Section header="EDUCATION">education</Section>
 </aside>
 </template>

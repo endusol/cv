@@ -22,15 +22,15 @@ import ThemeSwitch from './ThemeSwitch.vue'
 		'button p themes-switcher';
 	grid-template-columns: 110px 1fr auto;
 	grid-template-rows: auto auto 1fr;
-	background: var(--clr--green);
+	background: var(--clr--primary);
 }
 .c--header > h1,
 .c--header > h3 {
 	border-bottom-left-radius: 10px;
 	width: max-content;
 	justify-self: end;
-	background: var(--clr--orange);
-	color: var(--clr--dark-green);
+	background: var(--clr--accent);
+	color: var(--clr--fnt--primary);
 	z-index: 2;
 }
 .c--header > h1 {
@@ -62,7 +62,7 @@ import ThemeSwitch from './ThemeSwitch.vue'
 	font-size: 16px;
 	padding: 20px 30px;
 	margin: auto;
-	color: var(--clr--biege);
+	color: var(--clr--fnt--secondary);
 }
 .c--header > div:last-of-type {
 	grid-area: themes-switcher;

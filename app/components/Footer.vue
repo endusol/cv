@@ -38,7 +38,7 @@ import Button from './Button.vue'
 
 <style>
 .c--footer {
-	background: var(--clr--green);
+	background: var(--clr--primary);
 	display: grid;
 	grid-template-columns: auto auto auto auto;
 	justify-content: center;
@@ -47,7 +47,7 @@ import Button from './Button.vue'
 }
 .c--footer > .c--link svg {
 	height: 30px;
-	fill: var(--clr--biege);
+	fill: var(--clr--fnt--secondary);
 }
 
 @media (max-width: 1000px) { .c--footer { grid-template-columns: auto auto; } }

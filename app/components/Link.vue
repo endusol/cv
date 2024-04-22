@@ -12,7 +12,7 @@ const props = defineProps(['hint'])
 <style>
 .c--link {
 	position: relative;
-	color: var(--clr--biege);
+	color: var(--clr--fnt--secondary);
 	text-decoration: none;
 	min-width: max-content;
 	cursor: pointer;
@@ -25,7 +25,7 @@ const props = defineProps(['hint'])
 	text-align: center;
 	border-radius: 5px 5px 0 0;
 	width: calc(100% - 20px);
-	background: var(--clr--dark-green);
+	background: var(--clr--secondary);
 	padding: 0 15px;
 	height: 20px;
 	line-height: 20px;
@@ -36,11 +36,11 @@ const props = defineProps(['hint'])
 	display: flex;
 	gap: 10px;
 	padding: 5px 10px;
-	border: solid 1.5px var(--clr--biege);
+	border: solid 1.5px var(--clr--fnt--secondary);
 	border-radius: 6px;
 	align-items: center;
 	position: relative;
-	background: var(--clr--green);
+	background: var(--clr--primary);
 	justify-content: space-between;
 }
 </style>

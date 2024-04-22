@@ -5,22 +5,22 @@ const id = ref('sun')
 const on = {
 	click: () => {
 		var root = document.documentElement
-		if (id.value === 'sun') {
-			id.value = 'moon'
-			root.style.setProperty('--clr--white',      '#0d1614');
-			root.style.setProperty('--clr--black',      '#2d647f');
-			root.style.setProperty('--clr--green',      '#274d4d');
-			root.style.setProperty('--clr--dark-green', '#92a799');
-			root.style.setProperty('--clr--biege',      '#cef1e6');
-			root.style.setProperty('--clr--orange',     '#120d1e');
-		} else {
+		if (id.value === 'moon') {
 			id.value = 'sun'
-			root.style.setProperty('--clr--white',      '#fcfcfc');
-			root.style.setProperty('--clr--black',      '#0f0f0f');
-			root.style.setProperty('--clr--green',      '#2c3e38');
-			root.style.setProperty('--clr--dark-green', '#081c1b');
-			root.style.setProperty('--clr--biege',      '#e6e0d1');
-			root.style.setProperty('--clr--orange',     '#c8972c');
+			root.style.setProperty('--clr--background',     '#fcfcfc');
+			root.style.setProperty('--clr--primary',        '#2c3e38');
+			root.style.setProperty('--clr--secondary',      '#081c1b');
+			root.style.setProperty('--clr--fnt--primary',   '#081c1b');
+			root.style.setProperty('--clr--fnt--secondary', '#e6e0d1');
+			root.style.setProperty('--clr--accent',         '#c8972c');
+		} else {
+			id.value = 'moon'
+			root.style.setProperty('--clr--background',     '#0d1614');
+			root.style.setProperty('--clr--primary',        '#274d4d');
+			root.style.setProperty('--clr--secondary',      '#4f6e64');
+			root.style.setProperty('--clr--fnt--primary',   '#99acab');
+			root.style.setProperty('--clr--fnt--secondary', '#cef1e6');
+			root.style.setProperty('--clr--accent',         '#0c0311');
 		}
 	}
 }
@@ -46,7 +46,7 @@ const on = {
   width: 40px;
   padding: 5px;
   border-radius: 20px;
-  background: var(--clr--dark-green);
+  background: var(--clr--secondary);
   position: relative;
   justify-items: center;
   border: none;
@@ -57,7 +57,7 @@ const on = {
   width: 100%;
   box-sizing: border-box;
   padding: 5px;
-  fill: var(--clr--biege);
+  fill: var(--clr--fnt--secondary);
 }
 .c--theme-switch::after {
   content: "";
@@ -65,7 +65,7 @@ const on = {
   position: absolute;
   width: 30px;
   aspect-ratio: 1;
-  background-color: var(--clr--biege);
+  background-color: var(--clr--fnt--secondary);
   border-radius: 50%;
   transition: ease-in-out .3s;
 }
