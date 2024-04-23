@@ -39,4 +39,21 @@
 	transition: var(--tr) ease-in-out;
 	height: 180%;
 }
+.c--button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: var(--tr--slow);
+    box-shadow: inset 0 0 7px 12px var(--clr--accent);
+}
+.c--button:active::after {
+    box-shadow: inset 0 0 0 0 var(--clr--secondary);
+    opacity: 1;
+    transition: 0s;
+}
 </style>
