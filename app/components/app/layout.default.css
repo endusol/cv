@@ -37,6 +37,7 @@ body > div::after {
 	background: var(--clr--background);
 	width: var(--w--avatar--before-after);
 	height: var(--br--avatar);
+	transition: ease-in-out var(--tr);
 }
 body > div::before { border-top-right-radius: var(--w--avatar--before-after); }
 body > div::after { border-top-left-radius: var(--w--avatar--before-after); }

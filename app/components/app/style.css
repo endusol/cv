@@ -9,6 +9,10 @@
 	--clr--fnt--primary:   #081c1b;
 	--clr--fnt--secondary: #e6e0d1;
 
+	--tr--slow: .5s;
+	--tr:       .3s;
+	--tr--fast: .2s;
+
 	--w--avatar: 240px;
 	--w--avatar--before-after: 20px;
 	--h--footer: 60px;
@@ -20,5 +24,6 @@
 	margin: 0;
 	padding: 0;
 	font-family: Rajdhani;
+	transition: ease-in-out var(--tr);
 }
 html, body { min-height: 100vh; }

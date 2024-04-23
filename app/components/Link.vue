@@ -29,7 +29,7 @@ const props = defineProps(['hint'])
 	padding: 0 15px;
 	height: 20px;
 	line-height: 20px;
-	transition: ease-in-out .2s;
+	transition: ease-in-out var(--tr--fast);
 }
 .c--link:hover > span { top: -20px; }
 .c--link > div {

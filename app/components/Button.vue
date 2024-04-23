@@ -6,7 +6,7 @@
 
 <style>
 .c--button {
-	transition: .3s ease-in-out;
+	transition: var(--tr) ease-in-out;
 	padding: 3px 11px;
 	background: none;
 	border: solid 1.5px var(--clr--fnt--secondary);
@@ -19,7 +19,7 @@
 	cursor: pointer;
 }
 .c--button:hover {
-	transition: .3s ease-in-out;
+	transition: var(--tr) ease-in-out;
 	border-color: var(--clr--secondary);
 }
 .c--button::before {
@@ -36,7 +36,7 @@
 	background: var(--clr--secondary);
 }
 .c--button:hover::before {
-	transition: .3s ease-in-out;
+	transition: var(--tr) ease-in-out;
 	height: 180%;
 }
 </style>

@@ -67,7 +67,7 @@ const on = {
   aspect-ratio: 1;
   background-color: var(--clr--fnt--secondary);
   border-radius: 50%;
-  transition: ease-in-out .3s;
+  transition: ease-in-out var(--tr);
 }
 .c--theme-switch#sun::after { top: 5px; }
 .c--theme-switch#moon::after { top: 35px; }
