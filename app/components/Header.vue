@@ -1,13 +1,15 @@
 <script setup>
 import Button from './Button.vue'
 import ThemeSwitch from './ThemeSwitch.vue'
+
+function print_pdf() { print() }
 </script>
 
 <template>
 <header class="c c--header">
 	<h1>DMITRI POZNYAKOV</h1>
 	<h3>DATA ENGINEER</h3>
-	<div><Button>PRINT CV</Button></div>
+	<div><Button @click="print_pdf()">PRINT CV</Button></div>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare elit urna, in ultricies neque aliquam nec. Nam dui ipsum, mattis vitae posuere vitae, interdum ac orci. Sed turpis risus, ultricies sit amet egestas in, scelerisque eget purus.</p>
 	<div><ThemeSwitch/></div>
 </header>
@@ -98,5 +100,29 @@ import ThemeSwitch from './ThemeSwitch.vue'
 	font-size: 14px;
 	padding: 10px 20px;
 }
+}
+
+@media print {
+.c--header {
+	grid-template-areas:
+		'h1 h3'
+		'p  p';
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto 1fr;
+}
+.c--header > h1,
+.c--header > h3 {
+	justify-self: center;
+	padding: 5px 15px;
+	background: none;
+	color: var(--clr--fnt--secondary);
+	font-family: Rajdhani;
+	font-size: 26px;
+	font-weight: 700;
+}
+.c--header > h1 { border-bottom-right-radius: 10px; }
+.c--header > p { padding: 0 20px; }
+.c--header > div:first-of-type,
+.c--header > div:last-of-type { display: none; }
 }
 </style>

@@ -41,3 +41,13 @@ body > div::after {
 }
 body > div::before { border-top-right-radius: var(--w--avatar--before-after); }
 body > div::after { border-top-left-radius: var(--w--avatar--before-after); }
+body > .c--header { grid-area: header; }
+body > aside {
+	grid-area: aside;
+	margin: 0 var(--w--avatar--before-after);
+}
+body > main {
+	grid-area: main;
+	margin-right: var(--w--avatar--before-after);
+}
+body > .c--footer { grid-area: footer; }

@@ -41,6 +41,6 @@ const props = defineProps(['hint'])
 	align-items: center;
 	position: relative;
 	background: var(--clr--primary);
-	justify-content: space-between;
+	justify-content: flex-start;
 }
 </style>

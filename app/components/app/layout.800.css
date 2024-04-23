@@ -24,4 +24,5 @@ body > div {
 }
 body > div::before,
 body > div::after { content: none; }
+body > .c--main { margin-left: var(--w--avatar--before-after); }
 }
