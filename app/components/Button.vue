@@ -25,7 +25,7 @@
 .c--button::before {
 	content: "";
 	display: block;
-	transition: .3s ease-in-out;
+	transition: var(--tr) ease-in-out;
 	z-index: -1;
 	height: 0;
 	width: 100%;

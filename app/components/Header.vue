@@ -84,6 +84,7 @@ function print_pdf() { print() }
 .c--header { grid-template-columns: 100px 1fr; }
 .c--header > h1 { font-size: 24px; }
 .c--header > h3 { font-size: 16px; }
+.c--header > p { padding: 20px; }
 }
 
 @media (max-width: 700px) {

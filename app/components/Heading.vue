@@ -1,34 +1,27 @@
-<script setup>
-const props = defineProps(['header'])
-</script>
+<script setup></script>
 
 <template>
-<section class="c c--section">
-	<h2>
-		<hr>
-		<span>{{ header }}</span>
-	</h2>
-	<slot/>
-</section>
+<h2 class="c c--heading">
+	<hr>
+	<span><slot/></span>
+</h2>
 </template>
 
 <style>
-.c--section { color: var(--clr--fnt--primary); }
-.c--section > h2 {
+.c--heading {
 	display: flex;
 	position: relative;
 	align-items: center;
-	margin-bottom: 15px;
+	width: 100%;
 }
-.c--section > h2 > hr {
-	margin: auto 0;
+.c--heading > hr {
 	width: 100%;
 	position: absolute;
 	box-sizing: border-box;
 	border: solid 1px var(--clr--fnt--primary);
 	border-radius: 1px;
 }
-.c--section > h2 > span {
+.c--heading > span {
 	font-family: 'Rozha One';
 	background: var(--clr--fnt--primary);
 	color: var(--clr--background);

@@ -14,7 +14,6 @@ body {
     grid-template-rows: auto auto 1fr auto;
 }
 body > img {
-	grid-area: avatar;
 	margin: var(--w--avatar--before-after);
 	border: none;
 }
@@ -24,5 +23,6 @@ body > div {
 }
 body > div::before,
 body > div::after { content: none; }
-body > .c--main { margin-left: var(--w--avatar--before-after); }
+body > main { margin-left: var(--w--avatar--before-after); }
+body > aside { width: auto; }
 }
