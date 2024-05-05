@@ -1,0 +1,59 @@
+name: Build and deploy to GHPs
+on:
+  workflow_dispatch: {}
+  push:
+    branches: ["main"]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+jobs:
+  pre-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install dependencies
+      run: npm install
+    - name: Test the components
+      run: echo not-implemented-yet...  # TODO: implement the test script in the package.json
+  build:
+    needs: pre-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: 20.x
+      - name: Test the solution
+        run: echo not-implemented-yet...  # TODO: implement the test script in the package.json
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: ghp
+          path: .build
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: ghp
+      url: ${{ steps.deploy-ghp.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy-ghp
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ghp
