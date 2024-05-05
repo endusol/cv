@@ -33,4 +33,4 @@ jobs:
         git checkout pages
         git add .build
         git commit -m "Build no.$(date --iso-8601=seconds)"
-        git push
+        git push origin pages
