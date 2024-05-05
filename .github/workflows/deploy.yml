@@ -19,7 +19,15 @@ jobs:
       with:
         node-version: '20.x'
         cache: 'npm'
+    # - name: Test the components
+    #   run: TODO implement the tests
     - name: Build the app
       run: npm run build
+    # - name: Serve and test the solution
+    #   run: TODO implement the test script in the package.json
     - name: Switch to the pages and commit
-      run: git checkout pages && git add .build && git commit -m 'Build'
+      run: |
+        git fetch origin
+        git checkout pages
+        git add .build
+        git commit -m "Build no.$(date -I seconds)"
