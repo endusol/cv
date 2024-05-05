@@ -5,7 +5,17 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    root: './app',
+    root: './src',
     plugins: [ vue() ],
-    resolve: { alias: { '@': fileURLToPath(new URL('./app', import.meta.url)) } }
+    resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
+    build: {
+        outDir: '../.build',
+        rollupOptions: {
+            output: {
+                entryFileNames: `assets/[name].js`,
+                chunkFileNames: `assets/[name].js`,
+                assetFileNames: `assets/[name].[ext]`
+            }
+        }
+    }
 })
