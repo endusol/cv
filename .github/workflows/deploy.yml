@@ -12,6 +12,8 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: dev
+    - name: list
+      run: pwd && ls -la
     - name: Use Node.js 20.x
       uses: actions/setup-node@v4
       with:
