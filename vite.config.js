@@ -7,7 +7,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
     root: './src',
     plugins: [ vue() ],
-    resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
+    // resolve: { alias: { '@': fileURLToPath(new URL('./cv', import.meta.url)) } },
     build: {
         outDir: '../.build',
         rollupOptions: {
