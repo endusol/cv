@@ -3,10 +3,11 @@ import Header from './Header.vue'
 import Footer from './Footer.vue'
 import Heading from './Heading.vue'
 import SkillLvl from './SkillLvl.vue'
-import json__general from '../data/general.json'
+import Load from './Load.vue'
 </script>
 
 <template>
+<Load />
 <img src="../assets/avatar.png"/>
 <div></div>
 <Header/>
