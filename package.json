@@ -1,0 +1,27 @@
+{
+  "name": "CV",
+  "version": "1.0.0",
+  "description": "CV web page.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "vite": "^4.4.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endusol/cv.git"
+  },
+  "keywords": [ "vuejs", "vite", "gh-pages" ],
+  "author": "endusol (pdima.endusol@gmail.com)",
+  "license": "MIT",
+  "bugs": { "url": "https://github.com/endusol/cv/issues" },
+  "homepage": "https://github.com/endusol/cv"
+}

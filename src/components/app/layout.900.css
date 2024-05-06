@@ -1,0 +1,7 @@
+@media (max-width: 900px) {
+:root {
+	--w--avatar: 200px;
+
+	--b--avatar: 10px;
+}
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--clr--background:     #fcfcfc;
+	--clr--primary:        #2c3e38;
+	--clr--secondary:      #081c1b;
+	--clr--accent:         #c8972c;
+	--clr--fnt--primary:   #081c1b;
+	--clr--fnt--secondary: #e6e0d1;
+
+	--tr--slow: .5s;
+	--tr:       .3s;
+	--tr--fast: .2s;
+
+	--w--avatar: 240px;
+	--w--avatar--before-after: 20px;
+	--h--footer: 60px;
+	--b--avatar: 15px;
+	--br--avatar: 30px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Rajdhani;
+	transition: ease-in-out var(--tr);
+}
+*::before,
+*::after { transition: ease-in-out var(--tr); }
+html, body { min-height: 100vh; }
+html {
+	background: var(--clr--primary);
+	scrollbar-color: #081c1b #2c3e38; /* TODO: parametrise it!  */
+	scrollbar-width: thin;
+}
+body > aside {
+	display: flex;
+	flex-direction: column;
+	gap: var(--w--avatar--before-after);
+}
+body > aside > ul {
+	color: var(--clr--fnt--primary);
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 5px 35px;
+	list-style: circle;
+	list-style-position: inside;
+	transition: none;  /* Fixes WebKit Bug: https://bugs.webkit.org/attachment.cgi?id=68015&action=edit */
+}
+@media(max-width: 800px) { body > aside > ul { grid-template-columns: 1fr 1fr; } }
