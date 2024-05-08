@@ -29,5 +29,6 @@
 	border-radius: 5px;
 	margin: 0 auto;
 	z-index: 1;
+	font-size: min(5vw, 24px);
 }
 </style>

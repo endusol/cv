@@ -42,10 +42,10 @@ const on = {
   display: grid;
   grid-template-rows: 1fr 1fr;
   box-sizing: border-box;
-  height: 70px;
-  width: 40px;
-  padding: 5px;
-  border-radius: 20px;
+  height: min(14vw, 70px);
+  width: min(8vw, 40px);
+  padding: min(1vw, 5px);
+  border-radius: min(4vw, 20px);
   background: var(--clr--secondary);
   position: relative;
   justify-items: center;
@@ -56,19 +56,19 @@ const on = {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  padding: 5px;
+  padding: min(1vw, 5px);
   fill: var(--clr--fnt--secondary);
 }
 .c--theme-switch::after {
   content: "";
   box-sizing: border-box;
   position: absolute;
-  width: 30px;
+  width: min(6vw, 30px);
   aspect-ratio: 1;
   background-color: var(--clr--fnt--secondary);
   border-radius: 50%;
   transition: ease-in-out var(--tr);
 }
-.c--theme-switch#sun::after { top: 5px; }
-.c--theme-switch#moon::after { top: 35px; }
+.c--theme-switch#sun::after { top: min(1vw, 5px); }
+.c--theme-switch#moon::after { top: min(7vw, 35px); }
 </style>

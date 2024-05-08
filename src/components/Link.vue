@@ -1,11 +1,15 @@
 <script setup>
-const props = defineProps(['hint'])
+const props = defineProps(['hint', 'svg'])
+console.log(props.svg)
 </script>
 
 <template>
 <a class="c c--link" target="_blank">
-	<span>{{ hint }}</span>
-	<div><slot/></div>
+	<span v-if="hint">{{ props.hint }}</span>
+	<div>
+		<svg v-html="svg.inner" :viewBox="svg.view_box"></svg>
+		<slot/>
+	</div>
 </a>
 </template>
 
@@ -43,5 +47,9 @@ const props = defineProps(['hint'])
 	background: var(--clr--primary);
 	justify-content: flex-start;
 	justify-content: space-between;
+}
+.c--link > div > svg {
+	height: min(7vw, 30px);
+	fill: var(--clr--fnt--secondary);
 }
 </style>
