@@ -34,3 +34,8 @@ html {
 	scrollbar-color: #081c1b #2c3e38; /* TODO: parametrise it!  */
 	scrollbar-width: thin;
 }
+input,
+textarea,
+button,
+select,
+a { -webkit-tap-highlight-color: transparent; }

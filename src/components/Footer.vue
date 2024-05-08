@@ -44,11 +44,11 @@ function copy_to_cb(txt) { navigator.clipboard.writeText(txt) }
 	display: grid;
 	grid-template-columns: auto auto auto auto;
 	justify-content: center;
-	gap: 15px;
-	padding: 10px 50px;
+	gap: min(3vw, 15px);
+	padding: min(3vw, 10px) min(10vw, 50px);
 }
 .c--footer > .c--link svg {
-	height: 30px;
+	height: min(7vw, 30px);
 	fill: var(--clr--fnt--secondary);
 }
 

@@ -17,7 +17,9 @@
 	z-index: 1;
 	overflow: hidden;
 	cursor: pointer;
+	font-size: min(3.5vw, 14px);
 }
+.c--button.mobile,
 .c--button:hover {
 	transition: var(--tr) ease-in-out;
 	border-color: var(--clr--secondary);
@@ -35,6 +37,7 @@
 	border-radius: 50% 50% 0 0;
 	background: var(--clr--secondary);
 }
+.c--button.mobile::before,
 .c--button:hover::before {
 	transition: var(--tr) ease-in-out;
 	height: 180%;
