@@ -4,7 +4,7 @@ const props = defineProps(['hint'])
 
 <template>
 <a class="c c--link" target="_blank">
-	<span>{{ hint }}</span>
+	<span v-if="hint">{{ hint }}</span>
 	<div><slot/></div>
 </a>
 </template>
