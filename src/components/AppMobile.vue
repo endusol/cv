@@ -1,56 +1,48 @@
 <script setup>
 import Button from './Button.vue'
-import ThemeSwitch from './ThemeSwitch.vue'
+import ThemesSwitcher from './ThemesSwitcher.vue'
 import Heading from './Heading.vue'
 import SkillLvl from './SkillLvl.vue'
+import * as data from '../data.json'
 
 function print_pdf() { print() }
-function copy_to_cb(txt) { navigator.clipboard.writeText(txt) }
+function copy(txt) { navigator.clipboard.writeText(txt) }
 </script>
 
 <template>
 <header>
 	<img src="../assets/avatar.png"/>
-	<h1>DMITRI&nbspPOZNYAKOV</h1>
-	<h3>DATA&nbspENGINEER</h3>
-	<ThemeSwitch />
+	<h1>{{ data.name }}</h1>
+	<h3>{{ data.title }}</h3>
+	<ThemesSwitcher />
 	<div>
-		<Button @click="print_pdf()" class="mobile">PRINT&nbspCV</Button>
+		<Button @click="print_pdf()" class="mobile">{{ data.buttons.print }}</Button>
 	</div>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare elit urna, in ultricies neque aliquam nec. Nam dui ipsum, mattis vitae posuere vitae, mattis vitae posuere vitae, interdum ac orci.</p>
+	<p>{{ data.summary }}</p>
 </header>
 <main>
-	<Heading>SKILLS</Heading>
+	<Heading>{{ data.headings.skills }}</Heading>
 	<ul>
-		<SkillLvl lvl="****">Python</SkillLvl>
-		<SkillLvl lvl="****">Pandas/Polars</SkillLvl>
-		<SkillLvl lvl="****">NumPy</SkillLvl>
-		<SkillLvl lvl="****">Spark (PySpark)</SkillLvl>
-		<SkillLvl lvl="***">Linux</SkillLvl>
-		<SkillLvl lvl="***">SQL</SkillLvl>
-		<SkillLvl lvl="***">Poetry</SkillLvl>
-		<SkillLvl lvl="**">Apache Airflow</SkillLvl>
-		<SkillLvl lvl="**">Java</SkillLvl>
-		<SkillLvl lvl="**">[CI/CD] GitHub Actions</SkillLvl>
-		<SkillLvl lvl="**">[CI/CD] Azure Pipelines</SkillLvl>
-		<SkillLvl lvl="*">Apache Hadoop</SkillLvl>
+		<SkillLvl v-for="lvl, skill in data.skills" :lvl="lvl">{{ skill }}</SkillLvl>
 	</ul>
-	<Heading>EDUCATION</Heading>
+	<Heading>{{ data.headings.education }}</Heading>
 	<ul>
-		<li>BSUIR - Belarusian State University of Informatics and Radioelectronics</li>
-		<li>EPAM University - Data Engineering Labaratory</li>
+		<li v-for="_ in data.education">{{ _ }}</li>
 	</ul>
-	<Heading>CAREER PATH</Heading>
+	<Heading>{{ data.headings.career }}</Heading>
 	MOBILE VERSION OF THE SITE
 </main>
 <footer>
-	<a href="mailto:pdima.endusol@gmail.com">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-			<path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
-		</svg>
-		pdima.endusol@gmail.com
-		<Button @click.prevent="copy_to_cb('pdima.endusol@gmail.com')" class="mobile">COPY</Button>
+	<a href="mailto:pdima.endusol@gmail.com" :svg="data.contacts[0].svg">
+		<Button @click.prevent="copy('pdima.endusol@gmail.com')" class="mobile">{{ data.buttons.copy }}</Button>
 	</a>
+	<!-- <a href="mailto:pdima.endusol@gmail.com"> -->
+		<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> -->
+			<!-- <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/> -->
+		<!-- </svg> -->
+		<!-- pdima.endusol@gmail.com -->
+		<!-- <Button @click.prevent="copy_to_cb('pdima.endusol@gmail.com')" class="mobile">COPY</Button> -->
+	<!-- </a> -->
 	<a href="https://www.linkedin.com/in/dmitri-poznyakov-61504818a/">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 			<path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
@@ -146,13 +138,13 @@ body > header > .c--theme-switch {
 }
 body > header > div {
 	grid-area: print;
-	margin: 0;
+	margin: 3vw 0;
 	display: flex;
 }
 body > header > div > .c--button { margin: auto; }
 body > header > p {
 	grid-area: summary;
-	font-size: 4vw;
+	font-size: min(4vw, 22px);
 	padding: 0 0 3vw 0;
 	color: var(--clr--fnt--secondary);
 }

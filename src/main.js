@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import axios from 'axios'
 import Load from './components/Load.vue'
 
 
