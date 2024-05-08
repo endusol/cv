@@ -53,6 +53,7 @@ body > header {
 	grid-template-rows: auto auto auto 1fr;
 	grid-template-columns: 1fr 2fr auto;
 	column-gap: 3vw;
+	position: relative;
 	background: var(--clr--primary);
 	box-sizing: border-box;
 	max-width: 100vw;
@@ -70,13 +71,14 @@ body > header > h1,
 body > header > h3 {
 	background: var(--clr--accent);
 	color: var(--clr--fnt--primary);
-	min-width: fit-content;
 	height: fit-content;
 	justify-self: end;
 	border-bottom-left-radius: 2vw;
 }
 body > header > h1 {
 	grid-area: h1;
+	position: absolute;
+	right: 0;
 	font-family: 'Rozha One';
 	font-size: 6vw;
 	padding: 0 4vw;
