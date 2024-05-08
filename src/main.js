@@ -11,4 +11,4 @@ const ism = () => {
     return regex1.test(agent) || regex2.test(agent.substr(0, 4))
 }
 // TODO: wait till fonts, avatar, and so on are loaded.
-window.location.replace(ism() ? 'cv/views/mobile.html' : 'cv/views/desktop.html')
+window.location.replace(ism() ? 'views/mobile.html' : 'views/desktop.html')
