@@ -12,12 +12,6 @@
 	--tr--slow: .5s;
 	--tr:       .3s;
 	--tr--fast: .2s;
-
-	--w--avatar: 240px;
-	--w--avatar--before-after: 20px;
-	--h--footer: 60px;
-	--b--avatar: 15px;
-	--br--avatar: 30px;
 }
 
 * {
