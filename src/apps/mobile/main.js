@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from '../components/AppMobile.vue'
+import App from './App.vue'
 
 
 window.app = createApp(App)

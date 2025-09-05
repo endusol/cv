@@ -1,6 +1,5 @@
 <script setup>
 const props = defineProps(['hint', 'svg'])
-console.log(props.svg)
 </script>
 
 <template>

@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import path from 'node:path'
 
 
 export default defineConfig({
@@ -22,5 +23,12 @@ export default defineConfig({
             }
         }
     },
-    base: '/cv'
+    base: '/cv',
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
+            '@components': path.resolve(__dirname, 'src/components')
+        },
+    },
 })

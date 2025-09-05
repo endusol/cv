@@ -52,7 +52,7 @@
     height: 100%;
     opacity: 0;
     transition: var(--tr--slow);
-    box-shadow: inset 0 0 7px 12px var(--clr--accent);
+    box-shadow: inset 0 0 7px 12px var(--clr--accent--secondary);
 }
 .c--button:active::after {
     box-shadow: inset 0 0 0 0 var(--clr--secondary);

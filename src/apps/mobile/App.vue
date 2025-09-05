@@ -1,9 +1,11 @@
 <script setup>
-import Button from './Button.vue'
-import ThemesSwitcher from './ThemesSwitcher.vue'
-import Heading from './Heading.vue'
-import SkillLvl from './SkillLvl.vue'
-import * as data from '../data.json'
+import Button from '@components/Button.vue'
+import ThemesSwitcher from '@components/ThemesSwitcher.vue'
+import Heading from '@components/Heading.vue'
+import SkillLvl from '@components/SkillLvl.vue'
+import Timeline from '@components/Timeline.vue'
+import TimelineItem from '@components/TimelineItem.vue'
+import * as data from '@/data.json'
 
 function print_pdf() { print() }
 function copy(txt) { navigator.clipboard.writeText(txt) }
@@ -11,7 +13,7 @@ function copy(txt) { navigator.clipboard.writeText(txt) }
 
 <template>
 <header>
-	<img src="../assets/avatar.png"/>
+	<img src="../../assets/avatar.png"/>
 	<h1>{{ data.name }}</h1>
 	<h3>{{ data.title }}</h3>
 	<ThemesSwitcher />
@@ -29,8 +31,10 @@ function copy(txt) { navigator.clipboard.writeText(txt) }
 	<ul>
 		<li v-for="_ in data.education">{{ _ }}</li>
 	</ul>
-	<Heading>{{ data.headings.career }}</Heading>
-	MOBILE VERSION OF THE SITE
+    <Heading>{{ data.headings.career }}</Heading>
+    <Timeline>
+        <TimelineItem v-for="_ in data.career" v-bind="_" />
+    </Timeline>
 </main>
 <footer>
 	<a v-for="_ in data.contacts" :hint="_.hint" :href="_.href">
@@ -69,7 +73,7 @@ body > header > img {
 }
 body > header > h1,
 body > header > h3 {
-	background: var(--clr--accent);
+	background: var(--clr--accent--secondary);
 	color: var(--clr--fnt--primary);
 	height: fit-content;
 	justify-self: end;
@@ -103,7 +107,7 @@ body > header > h3::after {
 	top: 0;
 	left: calc(-1 * 2vw);
 }
-body > header > h3::before { background: var(--clr--accent); }
+body > header > h3::before { background: var(--clr--accent--secondary); }
 body > header > h3::after {
 	background: var(--clr--primary);
 	border-top-right-radius: 2vw;

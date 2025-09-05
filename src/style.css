@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 :root {
-	--clr--background:     #fcfcfc;
-	--clr--primary:        #2c3e38;
-	--clr--secondary:      #081c1b;
-	--clr--accent:         #c8972c;
-	--clr--fnt--primary:   #081c1b;
-	--clr--fnt--secondary: #e6e0d1;
+	--clr--background:        #fcfcfc;
+	--clr--primary:           #2c3e38;
+	--clr--secondary:         #081c1b;
+	--clr--accent--primary:   #c8972c;
+	--clr--accent--secondary: #c8972c;
+	--clr--fnt--primary:      #081c1b;
+	--clr--fnt--secondary:    #e6e0d1;
 
 	--tr--slow: .5s;
 	--tr:       .3s;
