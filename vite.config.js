@@ -1,4 +1,3 @@
-import { fileURLToPath, URL } from 'node:url'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -13,8 +12,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 index: resolve(__dirname, 'src/index.html'),
-                desktop: resolve(__dirname, 'src/views/desktop.html'),
-                mobile: resolve(__dirname, 'src/views/mobile.html')
+                desktop: resolve(__dirname, 'src/apps/desktop/index.html'),
+                mobile: resolve(__dirname, 'src/apps/mobile/index.html')
             },
             output: {
                 entryFileNames: `assets/[name].js`,
