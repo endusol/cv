@@ -7,20 +7,22 @@ const on = {
 		var root = document.documentElement
 		if (id.value === 'moon') {
 			id.value = 'sun'
-			root.style.setProperty('--clr--background',     '#fcfcfc');
-			root.style.setProperty('--clr--primary',        '#2c3e38');
-			root.style.setProperty('--clr--secondary',      '#081c1b');
-			root.style.setProperty('--clr--fnt--primary',   '#081c1b');
-			root.style.setProperty('--clr--fnt--secondary', '#e6e0d1');
-			root.style.setProperty('--clr--accent',         '#c8972c');
+			root.style.setProperty('--clr--background',        '#fcfcfc');
+			root.style.setProperty('--clr--primary',           '#2c3e38');
+			root.style.setProperty('--clr--secondary',         '#081c1b');
+			root.style.setProperty('--clr--fnt--primary',      '#081c1b');
+			root.style.setProperty('--clr--fnt--secondary',    '#e6e0d1');
+			root.style.setProperty('--clr--accent--primary',   '#c8972c');
+			root.style.setProperty('--clr--accent--secondary', '#c8972c');
 		} else {
 			id.value = 'moon'
-			root.style.setProperty('--clr--background',     '#0d1614');
-			root.style.setProperty('--clr--primary',        '#274d4d');
-			root.style.setProperty('--clr--secondary',      '#4f6e64');
-			root.style.setProperty('--clr--fnt--primary',   '#99acab');
-			root.style.setProperty('--clr--fnt--secondary', '#cef1e6');
-			root.style.setProperty('--clr--accent',         '#0c0311');
+			root.style.setProperty('--clr--background',        '#0d1614');
+			root.style.setProperty('--clr--primary',           '#274d4d');
+			root.style.setProperty('--clr--secondary',         '#4f6e64');
+			root.style.setProperty('--clr--fnt--primary',      '#99acab');
+			root.style.setProperty('--clr--fnt--secondary',    '#cef1e6');
+			root.style.setProperty('--clr--accent--primary',   '#0d542e');
+			root.style.setProperty('--clr--accent--secondary', '#0c0311');
 		}
 	}
 }
