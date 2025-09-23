@@ -1,32 +1,24 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Icon from '@components/basic/Icon.vue'
 
-const id = ref('sun')
+const id = ref()
+const root = document.documentElement
 const on = {
     click: () => {
-        var root = document.documentElement
         if (id.value === 'moon') {
             id.value = 'sun'
-            root.style.setProperty('--clr--background',        '#fcfcfc');
-            root.style.setProperty('--clr--primary',           '#2c3e38');
-            root.style.setProperty('--clr--secondary',         '#081c1b');
-            root.style.setProperty('--clr--fnt--primary',      '#081c1b');
-            root.style.setProperty('--clr--fnt--secondary',    '#e6e0d1');
-            root.style.setProperty('--clr--accent--primary',   '#c8972c');
-            root.style.setProperty('--clr--accent--secondary', '#c8972c');
+            root.setAttribute('theme', 'light')
         } else {
             id.value = 'moon'
-            root.style.setProperty('--clr--background',        '#0d1614');
-            root.style.setProperty('--clr--primary',           '#274d4d');
-            root.style.setProperty('--clr--secondary',         '#4f6e64');
-            root.style.setProperty('--clr--fnt--primary',      '#99acab');
-            root.style.setProperty('--clr--fnt--secondary',    '#cef1e6');
-            root.style.setProperty('--clr--accent--primary',   '#0d542e');
-            root.style.setProperty('--clr--accent--secondary', '#0c0311');
+            root.setAttribute('theme', 'dark')
         }
     }
 }
+onMounted(() => {
+    root.setAttribute('theme', 'dark')
+    id.value = 'moon'
+})
 </script>
 
 <template>
@@ -37,6 +29,24 @@ const on = {
 </template>
 
 <style>
+[theme="light"] {
+    --clr--background:        #fcfcfc;
+    --clr--primary:           #2c3e38;
+    --clr--secondary:         #081c1b;
+    --clr--accent--primary:   #c8972c;
+    --clr--accent--secondary: #c8972c;
+    --clr--fnt--primary:      #081c1b;
+    --clr--fnt--secondary:    #e6e0d1;
+}
+[theme="dark"] {
+    --clr--background:        #0d1614;
+    --clr--primary:           #274d4d;
+    --clr--secondary:         #4f6e64;
+    --clr--fnt--primary:      #99acab;
+    --clr--fnt--secondary:    #cef1e6;
+    --clr--accent--primary:   #0d542e;
+    --clr--accent--secondary: #0c0311;
+}
 .c--themes-switcher {
     display: grid;
     grid-template-rows: 1fr 1fr;
