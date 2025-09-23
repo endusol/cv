@@ -1,14 +1,14 @@
 <script setup>
-import Tag from '@components/Tag.vue'
-import Responsive from '@components/Responsive.vue';
+import Tag from '@components/basic/Tag.vue'
+import Responsive from '@components/basic/Responsive.vue';
 
 const props = defineProps({
-    period: {type: String, required: true},
-    position: {type: String, required: true},
-    customer: {type: String, required: true},
-    tags: {type: Array[String], required: true},
+    period:      {type: String, required: true},
+    position:    {type: String, required: true},
+    customer:    {type: String, required: true},
+    tags:        {type: Array[String], required: true},
     description: {type: String, required: true},
-    active: {type: Boolean, required: true},
+    active:      {type: Boolean, required: true},
 
 });
 </script>

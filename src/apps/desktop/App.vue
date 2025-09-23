@@ -4,8 +4,8 @@ import ThemesSwitcher from '@components/ThemesSwitcher.vue'
 import Heading from '@components/Heading.vue'
 import SkillLvl from '@components/SkillLvl.vue'
 import Link from '@components/Link.vue'
-import Timeline from '@components/Timeline.vue'
-import TimelineItem from '@components/TimelineItem.vue'
+import Timeline from '@components/complex/Timeline.vue'
+import TimelineItem from '@components/complex/TimelineItem.vue'
 import * as data from '@/data.json'
 
 function print_pdf() { print() }

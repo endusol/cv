@@ -10,11 +10,6 @@ export default defineConfig({
     build: {
         outDir: '../.build',
         rollupOptions: {
-            input: {
-                index: resolve(__dirname, 'src/index.html'),
-                desktop: resolve(__dirname, 'src/apps/desktop/index.html'),
-                mobile: resolve(__dirname, 'src/apps/mobile/index.html')
-            },
             output: {
                 entryFileNames: `assets/[name].js`,
                 chunkFileNames: `assets/[name].js`,
@@ -25,9 +20,10 @@ export default defineConfig({
     base: '/cv',
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'src'),
-            '@assets': path.resolve(__dirname, 'src/assets'),
-            '@components': path.resolve(__dirname, 'src/components')
+            '@':           path.resolve(__dirname, 'src'           ),
+            '@assets':     path.resolve(__dirname, 'src/assets'    ),
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@data':       path.resolve(__dirname, 'src/data'      )
         },
     },
 })

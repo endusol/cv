@@ -1,0 +1,44 @@
+<script setup>
+import ContactLink from '@components/complex/ContactLink.vue'
+import contacts    from '@data/contacts.json'
+</script>
+
+<template>
+<footer class="c c--footer">
+    <div id="background"/>
+    <section>
+        <ContactLink v-for="_ in contacts" v-bind="_"/>
+    </section>
+</footer>
+</template>
+
+<style>
+.c--footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: subgrid;
+    justify-content: center;
+    margin-top: var(--br--avatar);
+}
+.c--footer > * { grid-row: 1; }
+.c--footer > #background {
+    grid-column: 1 / -1;
+    background: var(--clr--primary);
+}
+.c--footer > section {
+    grid-column: 2 / -2;
+    display: flex;
+    gap: min(3vw, 15px);
+    justify-content: center;
+    align-items: center;
+    margin: min(3vw, 10px) min(10vw, 50px);
+}
+@media (max-width: 1200px) {
+    .c--footer { grid-template-columns: 1fr; }
+    .c--footer > section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: min(3vw, 10px) auto;
+    }
+}
+</style>
