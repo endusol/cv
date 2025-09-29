@@ -1,6 +1,7 @@
 <script setup>
 import Button from '@components/basic/Button.vue'
 import Icon   from '@components/basic/Icon.vue'
+import is_mobile from '@/misc/is_mobile.js'
 
 const props = defineProps({
     hint:      { type: String, required: false },
@@ -13,12 +14,18 @@ function copy(txt) { navigator.clipboard.writeText(txt) }
 </script>
 
 <template>
-<a class="c c--contact-link" :href="props.href">
+<a 
+    class="c c--contact-link"
+    :class="{ mobile: is_mobile() }"
+    :href="props.href"
+    target="_blank"
+    rel="noopener noreferrer"
+>
     <span v-if="hint">{{ props.hint }}</span>
     <div>
         <Icon v-bind="{ [props.icon]: true }"/>
         {{ props.text }}
-        <Button @click.prevent="copy(String(props.clipboard))" class="mobile">COPY</Button>
+        <Button @click.prevent="copy(String(props.clipboard))">COPY</Button>
     </div>
 </a>
 </template>
@@ -62,4 +69,5 @@ function copy(txt) { navigator.clipboard.writeText(txt) }
     height: min(7vw, 30px);
     fill: var(--clr--fnt--secondary);
 }
+.c--contact-link.mobile > span { display: none; }
 </style>

@@ -129,7 +129,6 @@ import Button         from '@components/basic/Button.vue'
 .c--header > section > p {
     grid-area: p;
     padding: 20px 30px;
-    color: var(--clr--fnt--secondary);
 }
 .c--header > section > .c--button {
     grid-area: button;
@@ -142,34 +141,33 @@ import Button         from '@components/basic/Button.vue'
 @media (max-width: 900px) {
     .c--header {
         --avatar--width: min(300px, 40vw);
-        --avatar--border-width: 10px;
         --avatar--border-radius: 25px;
 
-        grid-template-areas:
-            '.      h1 . themes-switcher'
-            '.      h3 . themes-switcher'
-            '.      p  p p              '
-            'button p  p p              '
-            '.      p  p p              ';
-        grid-template-areas:
-            '.       . h1 themes-switcher'
-            '.       . h3 themes-switcher'
-            '.       p p  p              '
-            'button  p p  p              '
-            '.       p p  p              ';
         grid-template-columns: auto 1fr;
-        grid-template-columns: var(--avatar--width) 1fr 130px auto;
-        grid-template-rows: min(42px, 10vw) min(37px, 10vw) auto auto 1fr;
     }
-    .c--header > * { grid-row: 1 / -1; }
-    .c--header > #background { grid-column: 1 / 5; }
-    .c--header > #avatar {
-        grid-column: 1;
-        grid-row: 1 / 4;
-        margin-top: 15px;
-    }
+    .c--header > * { grid-row: 1 / 3; }
+    .c--header > #background { grid-column: 1 / 4;}
     .c--header > #avatar > div { display: none; }
     .c--header > section {
+        grid-template-columns: 130px 1fr auto;
+        margin-right: var(--avatar--border-width);
+    }
+    .c--header > section > h1 { font-size: 28px; }
+    .c--header > section > h3 { font-size: 18px; }
+    .c--header > section > p { margin: auto; }
+}
+@media (max-width: 750px) {  /* TODO: SYNC THE SECTION WITH HEADER HELP: make header grid and use subgrid in section to place the button below the avatar. */
+    .c--header {
+        --avatar--border-radius: 20px;
+
+        grid-template-rows: min(37px, 6vw) min(21px, 4vw) auto 1fr auto;
+        grid-template-rows: min(37px, 6vw) min(21px, 4vw) auto auto 1fr;
+    }
+    .c--header > #background { grid-row: 1 / -1; }
+    .c--header > #avatar { grid-row: 1 / 4; }
+    .c--header > #avatar > img { border-width: 10px; }
+    .c--header > section {
+        grid-row: 1 / -1;
         grid-column: 1 / -1;
         grid-template-areas:
             '.      h1 . themes-switcher'
@@ -178,42 +176,36 @@ import Button         from '@components/basic/Button.vue'
             'button p  p p              '
             '.      p  p p              ';
         grid-template-areas:
-            '.       . h1 themes-switcher'
-            '.       . h3 themes-switcher'
-            '.       p p  p              '
-            'button  p p  p              '
-            '.       p p  p              ';
-        grid-template-columns: subgrid;
+            '.      h1 themes-switcher'
+            '.      h3 themes-switcher'
+            '.      p  p              '
+            'button p  p              '
+            '.      p  p              ';
+        grid-template-columns: var(--avatar--width) min(120px, 40vw) auto;
         grid-template-rows: subgrid;
-        margin-right: var(--avatar--border-width);
-        padding-bottom: var(--avatar--border-width);
     }
-    .c--header > section > h1 { font-size: min(29px, 7vw); }
+    .c--header > section > h1 {
+        /* height: min(37px, 6vw); */
+        /* font-size: min(23px, 4vw); */
+        height: min(40px, 9vw);
+        font-size: min(28px, 5vw);
+    }
     .c--header > section > h3 {
-        font-size: min(18px, 4.7vw);
-        line-height: min(15px, 4vw);
+        /* height: min(21px, 4vw); */
+        /* font-size: 16px; */
+        height: 4vw;
+        font-size: 16px;
     }
     .c--header > section > p {
-        margin: auto;
-        grid-column: 1 / -1;
-        padding: 10px 15px;
-        grid-template-columns: subgrid;
-        grid-template-rows: subgrid;
+        /* grid-row: 1 / -1; */
+        /* grid-column: 1 / -1; */
     }
     .c--header > section > p::before {
         content: '';
-        float: left;
-        grid-column: 1;
-        grid-row: 1 / 4;
-        width: var(--avatar--width);
-        height: var(--avatar--width);
-        margin-top: calc(-1 * (min(42px, 9vw) + min(37px, 6vw) - 26px));
-        /* margin-top: calc(-1 * (min(42px, 9vw) + min(37px, 6vw) - 23px)); */
-
-        shape-outside: inset(0 round 0 0 50% 0);  
-        /* clip-path: inset(0 round 0 0 55% 0); */
-        /* background: #00004040; */
     }
-    .c--header > section > .c--themes-switcher { margin-left: var(--avatar--border-width); }
+    .c--header > section > .c--themes-switcher {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
 }
 </style>

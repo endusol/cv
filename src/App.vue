@@ -4,7 +4,6 @@ import Footer from '@components/complex/Footer.vue'
 </script>
 
 <template>
-<Style></Style>
 <Header/>
 <aside>aside block</aside>
 <main>main block</main>
@@ -17,7 +16,7 @@ import Footer from '@components/complex/Footer.vue'
     --whitespace-width: calc(50vw - var(--reading-width) / 2);  /* Whitespaces before/after UX "safe" area. */
     --aside-width: 300px;
     --margin-vertical: 30px;
-    --margin-horizontal: 40px;
+    --margin-horizontal: 35px;
 }
 
 body {
@@ -46,5 +45,20 @@ body > main {
 body > .c--footer {
     grid-area: footer;
     background: #08355288;
+}
+@media (max-width: 900px) {
+    :root {
+        --aside-width: 250px;
+        --margin-vertical: 20px;
+        --margin-horizontal: 20px;
+    }
+    body {
+        grid-template-areas:
+            'header header'
+            '.      .     '
+            'aside  main  '
+            'footer footer';
+        grid-template-columns: auto 1fr;
+    }
 }
 </style>

@@ -37,8 +37,11 @@ import contacts    from '@data/contacts.json'
     .c--footer { grid-template-columns: 1fr; }
     .c--footer > section {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto auto;
         margin: min(3vw, 10px) auto;
     }
+}
+@media (max-width: 900px) {
+    .c--footer > section { grid-template-columns: auto; }
 }
 </style>
