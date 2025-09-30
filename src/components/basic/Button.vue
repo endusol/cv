@@ -1,16 +1,13 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
+import { is_mobile } from '@/misc/is_mobile.js'
 
-onMounted(() => {
-// TODO: add class `mobile` to component's root in case if it's used on mobile.
-})
-const ism = () => {
-    return false
-}
+const mobile = ref()
+onMounted(() => { mobile.value = is_mobile() })
 </script>
 
 <template>
-<button class="c c--button mobile"><slot/></button>
+<button class="c c--button" :class="{ mobile }"><slot/></button>
 </template>
 
 <style>
