@@ -1,0 +1,108 @@
+[
+    {
+        "period": "Sep 2024 - Present",
+        "customer": "@ EPAM Data Office",
+        "position": "ETL Developer / DQ Automation Engineer",
+        "description": "Designed and implemented data integration pipelines using a custom SQL-based framework, enabling seamless onboarding of new data sources into GCP BigQuery. Automated data quality validation with Python and SQL to ensure accuracy and consistency across critical datasets. Orchestrated test execution with Apache Airflow (Cloud Composer) and introduced automatic assessment and reporting to optimize performance. Created a flexible testing framework (JXS) with Python, Jinja2, MongoQuery, and BigQuery, improving scalability of validation processes. Automated release verification within CI/CD pipelines, enhancing deployment stability. Additionally, contributed through code reviews, documentation support, and continuous improvements in data integration and data quality workflows.",
+        "tags": [
+            "Python",
+            "SQL",
+            "Jinja2",
+            "GCP",
+            "Cloud Composer",
+            "Apache Airflow",
+            "BigQuery",
+            "Pandas",
+            "Jupyter Notebook/Lab",
+            "GitLab",
+            "Confluence",
+            "Jira"
+        ],
+        "active": true
+    },
+    {
+        "period": "May 2024 - Aug 2024",
+        "customer": "@ EPAM x EF Education First",
+        "position": "DQ Automation Engineer",
+        "description": "Validated DBT models and SQL transformations to ensure data accuracy and consistency. Designed a proof-of-concept for an automated test reporting process. Integrated validation checks into project workflows, increasing confidence in production data deliveries.",
+        "tags": [
+            "Python",
+            "SQL",
+            "Pandas",
+            "DBT",
+            "Snowflake",
+            "Jupyter Notebook",
+            "GitHub",
+            "GitHub Actions",
+            "Jira"
+        ],
+        "active": false
+    },
+    {
+        "period": "Jul 2022 - Jan 2024",
+        "customer": "@ EPAM x FedEx Ground Services",
+        "position": "AQA Engineer",
+        "description": "Automated UI and end-to-end regression tests using Cypress, significantly reducing manual regression time. Developed a comprehensive API testing suite with Java, Maven, and REST Assured, ensuring backend reliability. Integrated data quality checks into Databricks workflows with PySpark, which improved the accuracy of data pipelines. Increased overall regression efficiency by extending automated coverage and delivered detailed test result reports for stakeholders and developers.",
+        "tags": [
+            "JavaScript",
+            "Cypress",
+            "Python",
+            "Databricks",
+            "PySpark",
+            "Java",
+            "JUnit5",
+            "REST Assured",
+            "Azure Pipelines",
+            "Node.js",
+            "GitLab",
+            "Jira"
+        ],
+        "active": false
+    },
+    {
+        "period": "Feb 2022 - Jun 2022",
+        "customer": "@ EPAM x Tengizchevroil LLP",
+        "position": "Developer / DQ Automation Engineer",
+        "description": "Designed and implemented a reusable Data Quality Framework (DQF) to validate ETL processes, which accelerated test creation and improved validation consistency. Resolved performance bottlenecks in the framework, reducing execution time and resource consumption. Automated compilation and broadcasting of test result reports, enabling stakeholders, and developers to receive consistent updates. Additionally, documented DQF functionality and trained the team to ensure smooth adoption.",
+        "tags": [
+            "Python",
+            "SQL",
+            "Pandas",
+            "NumPy",
+            "Matplotlib",
+            "Microsoft SQL Server",
+            "Azure Blob Storage",
+            "Jupyter Notebook",
+            "GitHub",
+            "Confluence",
+            "Jira"
+        ],
+        "active": false
+    },
+    {
+        "period": "Oct 2021 - Jan 2022",
+        "customer": "@ EPAM Systems",
+        "position": "Intern",
+        "description": "Implemented data quality and completeness validation for analytics platform, ensuring integrity of business-critical datasets. Automated profiling workflows for CSV, XLSX, and TXT sources, which reduced manual validation efforts. Developed test automation scripts with Python, Apache JMeter, and Jenkins to streamline QA processes. Contributed to test documentation, including checklists and strategies.",
+        "tags": [
+            "Python",
+            "SQL",
+            "PL/pgSQL",
+            "Pandas",
+            "NumPy",
+            "Matplotlib",
+            "Selenium",
+            "Jupyter Notebook",
+            "Amazon S3",
+            "Amazon Redshift",
+            "Amazon EC2",
+            "PostgreSQL",
+            "Oracle RDBMS",
+            "Jenkins",
+            "Apache JMeter",
+            "StarUML",
+            "Miro"
+        ],
+        "active": false
+    }
+]

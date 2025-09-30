@@ -4,21 +4,17 @@ import Icon from '@components/basic/Icon.vue'
 
 const id = ref()
 const root = document.documentElement
+const set_theme = (theme) => {
+    id.value = { light: 'sun', dark: 'moon' }[theme]
+    root.setAttribute('theme', theme)
+}
 const on = {
     click: () => {
-        if (id.value === 'moon') {
-            id.value = 'sun'
-            root.setAttribute('theme', 'light')
-        } else {
-            id.value = 'moon'
-            root.setAttribute('theme', 'dark')
-        }
+        if (id.value === 'moon') set_theme('light')
+        else set_theme('dark')
     }
 }
-onMounted(() => {
-    root.setAttribute('theme', 'dark')
-    id.value = 'moon'
-})
+onMounted(() => { set_theme('light') })
 </script>
 
 <template>

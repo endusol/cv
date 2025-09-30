@@ -5,25 +5,27 @@ import Footer       from '@components/complex/Footer.vue'
 import SkillLvl     from '@components/complex/SkillLvl.vue'
 import Timeline     from '@components/complex/Timeline.vue'
 import TimelineItem from '@components/complex/TimelineItem.vue'
-import * as data from '@data/data.json'
+import career       from '@data/career.json'
+import skills       from '@data/skills.json'
+import education    from '@data/education.json'
 </script>
 
 <template>
 <Header/>
 <aside>
-    <Heading>{{ data.headings.skills }}</Heading>
+    <Heading>SKILLS</Heading>
     <ul>
-        <SkillLvl v-for="lvl, skill in data.skills" :lvl="lvl">{{ skill }}</SkillLvl>
+        <SkillLvl v-for="lvl, skill in skills" :lvl="lvl">{{ skill }}</SkillLvl>
     </ul>
-    <Heading>{{ data.headings.education }}</Heading>
+    <Heading>EDUCATION</Heading>
     <ul>
-        <li v-for="_ in data.education">{{ _ }}</li>
+        <li v-for="_ in education">{{ _ }}</li>
     </ul>
 </aside>
 <main>
-    <Heading>{{ data.headings.career }}</Heading>
+    <Heading>CAREER&nbsp;PATH</Heading>
     <Timeline>
-        <TimelineItem v-for="_ in data.career" v-bind="_" />
+        <TimelineItem v-for="_ in career" v-bind="_" />
     </Timeline>
 </main>
 <Footer/>
@@ -103,4 +105,36 @@ body > .c--footer { grid-area: footer; }
         margin-top: 0;
     }
 }
+/* @media print { */
+    /* :root {
+        --aside-width: 250px;
+        --margin-vertical: 20px;
+        --margin-horizontal: 20px;
+    }
+    body {
+        grid-template-areas:
+            'header header'
+            '.      footer'
+            'aside  main  ';
+    } */
+    :root {
+        --aside-width: 250px;
+        --margin-vertical: 20px;
+        --margin-horizontal: 20px;
+    }
+    body {
+        grid-template-areas:
+            '.      .     '
+            '.      .     '
+            '.      footer'
+            'aside  main  ';
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-rows: 60px 1fr auto auto 1fr;
+    }
+    body > .c--header {
+        grid-row: 1 / 4;
+    }
+    body > .c--footer > * { background: #10101080 !important; }
+/* } */
 </style>

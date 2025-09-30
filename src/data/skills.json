@@ -1,0 +1,15 @@
+{
+    "Python":         "****",
+    "SQL":            "****",
+    "Jinja2":         "****",
+    "Pandas/Polars":  "***",
+    "BigQuery":       "***",
+    "NumPy":          "***",
+    "Apache Airflow": "**",
+    "Linux":          "**",
+    "GitHub Actions": "**",
+    "DBT":            "*",
+    "Snowflake":      "*",
+    "Java":           "*",
+    "JavaScript":     "*"
+}

@@ -1,6 +1,9 @@
 <script setup>
 import ThemesSwitcher from '@components/complex/ThemesSwitcher.vue'
 import Button         from '@components/basic/Button.vue'
+import general        from '@data/general.json'
+
+function print_pdf() { print() }
 </script>
 
 <template>
@@ -8,21 +11,14 @@ import Button         from '@components/basic/Button.vue'
     <div id="background"/>
     <div id="avatar">
         <div/>
-        <img src="https://endusol.github.io/cv/assets/avatar.png"/>
+        <img src="@assets/avatar.png"/>
         <div/>
     </div>
     <section>
-        <h1>DMITRI&nbsp;POZNYAKOV</h1>
-        <h3><div/>DATA&nbsp;ENGINEER</h3>
-        <p>
-            Data Engineer with strong focus on Data Integration 
-            and Data Quality automation. While my current focus is on 
-            Data Integration Engineering, I bring extensive background
-            in Data Quality engineering and test automation, which
-            enables me to deliver robust, reliable, and
-            business-ready data solutions.
-        </p>
-        <Button>PRINT&nbsp;CV</Button>
+        <h1>{{ general.name }}</h1>
+        <h3><div/>{{ general.title }}</h3>
+        <p>{{ general.summary }}</p>
+        <Button @click="print_pdf()">PRINT&nbsp;CV</Button>
         <ThemesSwitcher/>
     </section>
 </header>
@@ -39,6 +35,7 @@ import Button         from '@components/basic/Button.vue'
     display: grid;
     grid-template-rows: subgrid;
     grid-template-columns: subgrid;
+    max-width: 100vw;
 }
 .c--header > * { grid-row: 1; }
 .c--header > #background {
@@ -141,16 +138,10 @@ import Button         from '@components/basic/Button.vue'
 }
 @media (max-width: 900px) {
     .c--header {
-        --avatar--width: min(300px, 40vw);
+        --avatar--width: min(250px, 40vw);
         --avatar--border-width: 10px;
         --avatar--border-radius: 25px;
 
-        grid-template-areas:
-            '.      h1 . themes-switcher'
-            '.      h3 . themes-switcher'
-            '.      p  p p              '
-            'button p  p p              '
-            '.      p  p p              ';
         grid-template-areas:
             '.       . h1 themes-switcher'
             '.       . h3 themes-switcher'
@@ -171,12 +162,6 @@ import Button         from '@components/basic/Button.vue'
     .c--header > #avatar > div { display: none; }
     .c--header > section {
         grid-column: 1 / -1;
-        grid-template-areas:
-            '.      h1 . themes-switcher'
-            '.      h3 . themes-switcher'
-            '.      p  p p              '
-            'button p  p p              '
-            '.      p  p p              ';
         grid-template-areas:
             '.       . h1 themes-switcher'
             '.       . h3 themes-switcher'
@@ -208,12 +193,95 @@ import Button         from '@components/basic/Button.vue'
         width: var(--avatar--width);
         height: var(--avatar--width);
         margin-top: calc(-1 * (min(42px, 9vw) + min(37px, 6vw) - 26px));
-        /* margin-top: calc(-1 * (min(42px, 9vw) + min(37px, 6vw) - 23px)); */
-
-        shape-outside: inset(0 round 0 0 50% 0);  
-        /* clip-path: inset(0 round 0 0 55% 0); */
-        /* background: #00004040; */
+        shape-outside: inset(0 round 0 0 50% 0);
     }
     .c--header > section > .c--themes-switcher { margin-left: var(--avatar--border-width); }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media print { */
+    .c--header {
+        --avatar--width: 250px;
+        --avatar--border-width: 10px;
+        --avatar--border-radius: 25px;
+
+        grid-template-areas:
+            'avatar h1 h3'
+            'avatar p  p '
+            '.      p  p ';
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 60px auto 1fr;
+    }
+    .c--header > * { grid-row: 1 / -1; }
+    .c--header > #background { grid-column: 1 / 5; }
+    .c--header > #avatar {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        margin-top: 0;
+        margin: 20px;
+    }
+    .c--header > #avatar > img { border-width: 0; }
+    .c--header > #avatar > div { display: none; }
+    .c--header > section {
+        grid-column: 2 / -1;
+        grid-row: 1 / 3;
+        grid-template-areas:
+            'h1 h3'
+            'p  p ';
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: subgrid;
+        margin: 20px 20px 20px 0;
+        padding-bottom: 0;
+        background: #10101050;
+    }
+    .c--header > section > h1,
+    .c--header > section > h3 {
+        background: none;
+        line-height: unset;
+        font-size: 40px;
+        font-family: Rajdhani;
+        font-weight: 600;
+        align-self: center;
+        justify-self: center;
+        margin: 0;
+        padding: 0;
+    }
+    .c--header > section > h3 > div { display: none; }
+    .c--header > section > p {
+        margin: auto;
+        grid-area: p;
+        padding: 10px 15px;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+    }
+    .c--header > section > .c--button,
+    .c--header > section > .c--themes-switcher { display: none; }
+/* } */
 </style>

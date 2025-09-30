@@ -19,6 +19,7 @@ import contacts    from '@data/contacts.json'
     grid-template-columns: subgrid;
     justify-content: center;
     margin-top: var(--br--avatar);
+    max-width: 100vw;
 }
 .c--footer > * { grid-row: 1; }
 .c--footer > #background {
@@ -44,4 +45,8 @@ import contacts    from '@data/contacts.json'
 @media (max-width: 900px) {
     .c--footer > section { grid-template-columns: auto; }
 }
+/* @media print { */
+    .c--footer { height: 100px; }
+    .c--footer > section { display: none; }
+/* } */
 </style>
