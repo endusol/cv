@@ -1,7 +1,6 @@
 [
     {
         "start": "2024-09-01",
-        "end": null,
         "customer": "@ EPAM Data Office",
         "position": "ETL Developer / DQ Automation Engineer",
         "description": "Designed and implemented data integration pipelines using a custom SQL-based framework, enabling seamless onboarding of new data sources into GCP BigQuery. Automated data quality validation with Python and SQL to ensure accuracy and consistency across critical datasets. Orchestrated test execution with Apache Airflow (Cloud Composer) and introduced automatic assessment and reporting to optimize performance. Created a flexible testing framework (JXS) with Python, Jinja2, MongoQuery, and BigQuery, improving scalability of validation processes. Automated release verification within CI/CD pipelines, enhancing deployment stability. Additionally, contributed through code reviews, documentation support, and continuous improvements in data integration and data quality workflows.",

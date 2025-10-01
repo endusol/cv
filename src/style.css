@@ -11,14 +11,14 @@
     margin: 0;
     padding: 0;
     font-family: Rajdhani;
-    /* transition: ease-in-out var(--tr); */
+    transition: ease-in-out var(--tr);
 }
 *::before,
 *::after { transition: ease-in-out var(--tr); }
 html, body { min-height: 100vh; }
 html {
     background: var(--clr--primary);
-    scrollbar-color: #081c1b #2c3e38; /* TODO: parametrise it!  */
+    scrollbar-color: var(--clr--fnt--primary) var(--clr--primary);
     scrollbar-width: thin;
 }
 input,

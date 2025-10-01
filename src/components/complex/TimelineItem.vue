@@ -4,7 +4,7 @@ import Responsive from '@components/basic/Responsive.vue';
 
 const props = defineProps({
     start:       {type: String,        required: true},
-    end:         {type: String,        required: true},
+    end:         {type: String,        required: false, default: null },
     position:    {type: String,        required: true},
     customer:    {type: String,        required: true},
     tags:        {type: Array[String], required: true},
@@ -89,7 +89,7 @@ function compose_work_period(start, end) {
 .c--timeline-item.condensed > #main {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    margin-top: -1px;
+    border-top: none;
 }
 .c--timeline-item.condensed.active > #main { margin-top: -2px; }
 .c--timeline-item.condensed > hr { margin: -10px 1em; }

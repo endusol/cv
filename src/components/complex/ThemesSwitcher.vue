@@ -40,7 +40,7 @@ onMounted(() => { set_theme('light') })
     --clr--secondary:         #4f6e64;
     --clr--fnt--primary:      #99acab;
     --clr--fnt--secondary:    #cef1e6;
-    --clr--accent--primary:   #0d542e;
+    --clr--accent--primary:   #0d543e;
     --clr--accent--secondary: #0c0311;
 }
 .c--themes-switcher {

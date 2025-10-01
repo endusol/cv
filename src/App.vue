@@ -5,12 +5,14 @@ import Footer       from '@components/complex/Footer.vue'
 import SkillLvl     from '@components/complex/SkillLvl.vue'
 import Timeline     from '@components/complex/Timeline.vue'
 import TimelineItem from '@components/complex/TimelineItem.vue'
+import Load         from '@components/complex/Load.vue'
 import career       from '@data/career.json'
 import skills       from '@data/skills.json'
 import education    from '@data/education.json'
 </script>
 
 <template>
+<Load/>
 <Header/>
 <aside>
     <Heading>SKILLS</Heading>

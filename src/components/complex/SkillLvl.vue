@@ -14,7 +14,6 @@ const props = defineProps([ "lvl" ])
 
 <style>
 .c--skill-lvl {
-  display: flex;
   gap: 10px;
   justify-content: space-between;
   display: grid;
