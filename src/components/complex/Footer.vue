@@ -45,8 +45,17 @@ import contacts    from '@data/contacts.json'
 @media (max-width: 900px) {
     .c--footer > section { grid-template-columns: auto; }
 }
-/* @media print { */
-    .c--footer { height: 100px; }
-    .c--footer > section { display: none; }
-/* } */
+@media print {
+    .c--footer > section {
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 0 auto;
+    }
+    .c--footer > section > .c--contact-link .c--button,
+    .c--footer > section > .c--contact-link span { display: none; }
+    .c--footer > section > .c--contact-link > div {
+        border: none;
+        justify-content: flex-start;
+    }
+}
 </style>

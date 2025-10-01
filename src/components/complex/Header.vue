@@ -197,36 +197,7 @@ function print_pdf() { print() }
     }
     .c--header > section > .c--themes-switcher { margin-left: var(--avatar--border-width); }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @media print { */
+@media print {
     .c--header {
         --avatar--width: 250px;
         --avatar--border-width: 10px;
@@ -237,7 +208,7 @@ function print_pdf() { print() }
             'avatar p  p '
             '.      p  p ';
         grid-template-columns: auto 1fr;
-        grid-template-rows: 60px auto 1fr;
+        grid-template-rows: auto auto 1fr;
     }
     .c--header > * { grid-row: 1 / -1; }
     .c--header > #background { grid-column: 1 / 5; }
@@ -259,29 +230,27 @@ function print_pdf() { print() }
         grid-template-rows: subgrid;
         margin: 20px 20px 20px 0;
         padding-bottom: 0;
-        background: #10101050;
     }
     .c--header > section > h1,
     .c--header > section > h3 {
         background: none;
         line-height: unset;
-        font-size: 40px;
+        font-size: 28px;
         font-family: Rajdhani;
         font-weight: 600;
         align-self: center;
         justify-self: center;
         margin: 0;
         padding: 0;
+        color: var(--clr--fnt--secondary);
     }
     .c--header > section > h3 > div { display: none; }
     .c--header > section > p {
         margin: auto;
         grid-area: p;
-        padding: 10px 15px;
-        grid-template-columns: subgrid;
-        grid-template-rows: subgrid;
     }
+    .c--header > section > p::before { content: unset; }
     .c--header > section > .c--button,
     .c--header > section > .c--themes-switcher { display: none; }
-/* } */
+}
 </style>

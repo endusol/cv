@@ -16,8 +16,8 @@ const props = defineProps({
 <template>
 <Responsive
     class="c c--timeline-item"
-    :class="{active: props.active}"
-    :config="{condensed: ({ sw, sh, ww, wh }) => sw <= 900}"
+    :class="{ active }"
+    :config="{ condensed: ({ sw, sh, ww, wh }) => sw <= 900 }"
 >
     <div id="meta">
         <strong>{{ props.period }}</strong>
