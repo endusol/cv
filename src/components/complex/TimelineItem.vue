@@ -3,24 +3,34 @@ import Tag from '@components/basic/Tag.vue'
 import Responsive from '@components/basic/Responsive.vue';
 
 const props = defineProps({
-    period:      {type: String, required: true},
-    position:    {type: String, required: true},
-    customer:    {type: String, required: true},
+    start:       {type: String,        required: true},
+    end:         {type: String,        required: true},
+    position:    {type: String,        required: true},
+    customer:    {type: String,        required: true},
     tags:        {type: Array[String], required: true},
-    description: {type: String, required: true},
-    active:      {type: Boolean, required: true},
-
+    description: {type: String,        required: true}
 });
+function compose_work_period(start, end) {
+    const parse = _ => new Date(_ ?? Date.now())
+    const s = parse(start)
+    const e = parse(end)
+
+    const _ = (e.getFullYear() - s.getFullYear()) * 12 + e.getMonth() - s.getMonth()
+    const d = `${Math.floor(_ / 12)}y ${_ % 12}m`
+
+    const fmt = _ => _.toLocaleString('en-US', { month: 'short', year: 'numeric' })
+    return `${fmt(s)} - ${fmt(end ? fmt(e) : 'Present')} (${d})`.replaceAll(' ', '\xa0')
+}
 </script>
 
 <template>
 <Responsive
     class="c c--timeline-item"
-    :class="{ active }"
+    :class="{ active: end === null }"
     :config="{ condensed: ({ sw, sh, ww, wh }) => sw <= 900 }"
 >
     <div id="meta">
-        <strong>{{ props.period }}</strong>
+        <strong>{{ compose_work_period(props.start, props.end) }}</strong>
         <p>{{ props.position }}</p>
         <p style="font-size: 0.8em">{{ props.customer }}</p>
     </div>
@@ -71,10 +81,7 @@ const props = defineProps({
     gap: 4px;
 }
 /* ========== CONDENSED ============================================================================================= */
-.c--timeline-item.condensed {
-    grid-template-columns: auto;
-
-}
+.c--timeline-item.condensed { grid-template-columns: auto; }
 .c--timeline-item.condensed > #meta {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;

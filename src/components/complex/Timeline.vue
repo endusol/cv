@@ -4,7 +4,6 @@
 
 <template>
 <section class="c c--timeline">
-    <!-- <hr/> -->
     <slot/>
 </section>
 </template>

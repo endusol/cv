@@ -1,6 +1,7 @@
 [
     {
-        "period": "Sep 2024 - Present",
+        "start": "2024-09-01",
+        "end": null,
         "customer": "@ EPAM Data Office",
         "position": "ETL Developer / DQ Automation Engineer",
         "description": "Designed and implemented data integration pipelines using a custom SQL-based framework, enabling seamless onboarding of new data sources into GCP BigQuery. Automated data quality validation with Python and SQL to ensure accuracy and consistency across critical datasets. Orchestrated test execution with Apache Airflow (Cloud Composer) and introduced automatic assessment and reporting to optimize performance. Created a flexible testing framework (JXS) with Python, Jinja2, MongoQuery, and BigQuery, improving scalability of validation processes. Automated release verification within CI/CD pipelines, enhancing deployment stability. Additionally, contributed through code reviews, documentation support, and continuous improvements in data integration and data quality workflows.",
@@ -17,11 +18,11 @@
             "GitLab",
             "Confluence",
             "Jira"
-        ],
-        "active": true
+        ]
     },
     {
-        "period": "May 2024 - Aug 2024",
+        "start": "2024-04-01",
+        "end": "2024-09-01",
         "customer": "@ EPAM x EF Education First",
         "position": "DQ Automation Engineer",
         "description": "Validated DBT models and SQL transformations to ensure data accuracy and consistency. Designed a proof-of-concept for an automated test reporting process. Integrated validation checks into project workflows, increasing confidence in production data deliveries.",
@@ -35,10 +36,11 @@
             "GitHub",
             "GitHub Actions",
             "Jira"
-        ],
-        "active": false
+        ]
     },
     {
+        "start": "2022-07-01",
+        "end": "2024-03-01",
         "period": "Jul 2022 - Jan 2024",
         "customer": "@ EPAM x FedEx Ground Services",
         "position": "AQA Engineer",
@@ -56,11 +58,11 @@
             "Node.js",
             "GitLab",
             "Jira"
-        ],
-        "active": false
+        ]
     },
     {
-        "period": "Feb 2022 - Jun 2022",
+        "start": "2022-02-01",
+        "end": "2022-07-01",
         "customer": "@ EPAM x Tengizchevroil LLP",
         "position": "Developer / DQ Automation Engineer",
         "description": "Designed and implemented a reusable Data Quality Framework (DQF) to validate ETL processes, which accelerated test creation and improved validation consistency. Resolved performance bottlenecks in the framework, reducing execution time and resource consumption. Automated compilation and broadcasting of test result reports, enabling stakeholders, and developers to receive consistent updates. Additionally, documented DQF functionality and trained the team to ensure smooth adoption.",
@@ -76,11 +78,11 @@
             "GitHub",
             "Confluence",
             "Jira"
-        ],
-        "active": false
+        ]
     },
     {
-        "period": "Oct 2021 - Jan 2022",
+        "start": "2021-10-01",
+        "end": "2022-02-01",
         "customer": "@ EPAM Systems",
         "position": "Intern",
         "description": "Implemented data quality and completeness validation for analytics platform, ensuring integrity of business-critical datasets. Automated profiling workflows for CSV, XLSX, and TXT sources, which reduced manual validation efforts. Developed test automation scripts with Python, Apache JMeter, and Jenkins to streamline QA processes. Contributed to test documentation, including checklists and strategies.",
@@ -102,7 +104,6 @@
             "Apache JMeter",
             "StarUML",
             "Miro"
-        ],
-        "active": false
+        ]
     }
 ]
