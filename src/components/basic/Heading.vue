@@ -13,6 +13,7 @@
 	position: relative;
 	align-items: center;
 	width: 100%;
+    margin-bottom: calc(var(--br--avatar) / 2);
 }
 .c--heading > hr {
 	width: 100%;
@@ -30,5 +31,8 @@
 	margin: 0 auto;
 	z-index: 1;
 	font-size: min(5vw, 24px);
+}
+@media (max-width: 1000px) {
+    .c--heading { margin-bottom: var(--br--avatar); }
 }
 </style>

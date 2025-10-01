@@ -1,0 +1,30 @@
+[
+    {
+        "text": "pdima.endusol@gmail.com",
+        "href": "mailto:pdima.endusol@gmail.com",
+        "hint": "e-mail\u00a0me!",
+        "clipboard": "pdima.endusol@gmail.com",
+        "icon": "email"
+    },
+    {
+        "text": "[\u00a0InID:\u00a061504818a\u00a0]",
+        "href": "https://www.linkedin.com/in/dmitri-poznyakov-61504818a/",
+        "hint": "link\u00a0profile!",
+        "clipboard": "dmitri-poznyakov-61504818a",
+        "icon": "linkedin"
+    },
+    {
+        "text": "@endusol",
+        "href": "https://t.me/endusol",
+        "hint": "text\u00a0me!",
+        "clipboard": "@endusol",
+        "icon": "telegram"
+    },
+    {
+        "text": "Minsk,\u00a0Belarus",
+        "href": "https://www.google.com/maps/place/@53.8841885,27.263738,10z",
+        "hint": "really?!",
+        "clipboard": "Minsk, Belarus",
+        "icon": "location"
+    }
+]

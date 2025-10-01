@@ -1,12 +1,14 @@
 <script setup>
-window.onload = () => {
-	document.getElementsByClassName('c--load')[0].style.display = 'none'
+function hide() {
+    document.querySelector('.c--load').style.display = 'none'
 }
+window.addEventListener('load', () => { hide() })
+document.addEventListener('DOMContentLoaded', () => { setTimeout(hide, 2000) })
 </script>
 
 <template>
 <section class="c c--load">
-	<img src="../assets/raccoon.gif">
+	<img src="@assets/raccoon.gif">
 	<hr>
 	<hr>
 	<hr>
@@ -32,7 +34,7 @@ window.onload = () => {
 }
 .c--load > img {
 	border-radius: 50%;
-	border: solid black 2vh;
+	border: solid black 1vh;
 	aspect-ratio: 1;
 	width: min(30vh, 30vw);
 }
